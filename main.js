@@ -42,5 +42,24 @@ document.write("A menor nota da AV2  é: " + menor2 + "<br>");
 
 // c) Calcular a média de notas da turma. A média da deverá ser apresentada da menor para a maior
 
+// Calculando a media
+let media = new Array(N)
+for(let i = 0;i<N;i++){
+    media[i] = ((AV1[i] + AV2[i]) / 2).toFixed(1);
+}
+
+// Ordenação do vetor media pelo método bolha
+
+for (let i = 0; i < media.length - 1; i++) {
+    for (let j = 0; j < media.length - i - 1; j++) {
+        if (media[j] > media[j + 1]) {
+            let aux = media[j];
+            media[j] = media[j + 1];
+            media[j + 1] = aux;
+        }
+    }
+}
+
+document.write(media);
 
 
